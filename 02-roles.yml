@@ -1,0 +1,4 @@
+- name: using roles playbook
+  hosts: localhost
+  roles:
+    - demo
