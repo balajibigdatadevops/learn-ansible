@@ -1,0 +1,49 @@
+- name: playbook for variables
+  hosts: all
+  vars:
+    URL: sample.com
+  tasks:
+    - name: displaying URL Name
+      ansible.builtin.debug:
+        msg: "{{ URL }}"
+    - name: displaying URL Name with some string then quotes not required
+      ansible.builtin.debug:
+        msg: Hello Given URL is:{{ URL }}
+
+
+# we can use vars at task level also
+
+- name: variables at task level
+  hosts: all
+  tasks:
+    - name: displaying url name
+      ansible.builtin.debug:
+        msg: "{{ URL }} "
+      vars:
+        URL: google.com
+    - name: displaying url name with out quotes
+      ansible.builtin.debug:
+        msg: The given url is:{{ URL }}
+      vars: google.co.in
+
+
+# register a variable and display output
+
+- name: store in register and display variable output
+  hosts: all
+  tasks:
+    - name: finding uptime of server
+      ansible.builtin.shell: uptime
+      register: out
+    - name: displaying output of uptime server
+      ansible.builtin.debug:
+        msg: "{{ out }}"
+    - name: displaying output of uptime server with heading
+      ansible.builtin.debug:
+        msg: The uptime server output is:{{ out }}
+    - name: displaying specific output of uptime server with heading
+      ansible.builtin.debug:
+        msg: The uptime server output is:{{ out.stdout }}
+    - name: displaying specific output of uptime server with heading
+      ansible.builtin.debug:
+        msg: The uptime server output is:{{ out.stdout_lines }}
