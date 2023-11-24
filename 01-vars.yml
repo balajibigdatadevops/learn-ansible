@@ -24,7 +24,8 @@
     - name: displaying url name with out quotes
       ansible.builtin.debug:
         msg: The given url is:{{ URL }}
-      vars: google.co.in
+      vars:
+        URL: google.co.in
 
 
 # register a variable and display output
