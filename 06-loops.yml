@@ -1,0 +1,39 @@
+- name: ansible playbook using loops
+  hosts: localhost
+  vars:
+    fruits:
+      - apple
+      - banana
+      - orange
+      - custard
+
+  tasks:
+    - name: printing names of fruits
+      ansible.builtin.fruit:
+        msg: Fruit is:{{ item }}
+      loop: "{{ fruits }}"
+
+
+- name: ansible playbook using loops
+  hosts: localhost
+  tasks:
+    - name: using loops
+      ansible.builtin.debug:
+        msg: digits words are "{{ item }}"
+      loop:
+        - one
+        - two
+        - three
+        - four
+        - file
+
+- name: ansible playbook using loops
+  hosts: localhost
+  tasks:
+    - name: using loop
+      ansible.builtin.debug:
+        msg: displaying fruit is {{ item.name }} and quantity is {{ item.quantity }}
+      loop:
+        - { name:"apple", quantity: 100}
+        - { name:"banana", quantity: 200}
+        - { name:"orange", quantity: 300}
