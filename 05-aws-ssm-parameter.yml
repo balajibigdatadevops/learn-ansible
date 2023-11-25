@@ -2,5 +2,5 @@
   hosts: all
   tasks:
 
-  - name:
+  - name: getting the value for sample parameter using aws parameter store concept
     debug: msg="{{lookup('amazon.aws.aws_ssm', 'sample',region='us-east-1') }}"
