@@ -19,13 +19,13 @@
   tasks:
     - name: using loops
       ansible.builtin.debug:
-        msg: digits words are "{{ item }}"
+        msg: digits words are {{ item }}
       loop:
         - one
         - two
         - three
         - four
-        - file
+        - five
 
 - name: ansible playbook using loops
   hosts: localhost
