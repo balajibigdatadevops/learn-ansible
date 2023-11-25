@@ -1,0 +1,14 @@
+- name: demo on conditions
+  hosts: localhost
+  tasks:
+    - name: checking based on condition
+      ansible.builtin.debug:
+        msg: Hello, Linux
+      when: os_name == "Linux"
+
+    - name: checking based on condition
+      ansible.builtin.debug:
+        msg: Hello, Windows
+      when: os_name == "Windows"
+
+
