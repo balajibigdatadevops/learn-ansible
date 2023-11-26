@@ -26,7 +26,7 @@
         - four
         - five
 
-- name: ansible playbook using loops
+- name: ansible playbook using loops with third example
   hosts: localhost
   tasks:
     - name: using loop
