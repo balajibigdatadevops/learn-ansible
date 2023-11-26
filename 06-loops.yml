@@ -33,6 +33,6 @@
       ansible.builtin.debug:
         msg: displaying fruit is {{ item.name }} and quantity is {{ item.quantity }}
       loop:
-        - { name:"apple", quantity: 100}
-        - { name:"banana", quantity: 200}
-        - { name:"orange", quantity: 300}
+        - { name: "apple", quantity: 100}
+        - { name: "banana", quantity: 200}
+        - { name: "orange", quantity: 300}
