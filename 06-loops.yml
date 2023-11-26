@@ -12,28 +12,3 @@
       ansible.builtin.debug:
         msg: Fruit is:{{ item }}
       loop: "{{ fruits }}"
-
-
-- name: ansible playbook using loops
-  hosts: localhost
-  tasks:
-    - name: using loops
-      ansible.builtin.debug:
-        msg: digits words are {{ item }}
-      loop:
-        - one
-        - two
-        - three
-        - four
-        - five
-
-- name: ansible playbook using loops
-  hosts: localhost
-  tasks:
-    - name: using loop
-      ansible.builtin.debug:
-        msg: displaying fruit is {{ item.name }} and quantity is {{ item.quantity }}
-      loop:
-        - {name:"apple", quantity: 100}
-        - {name:"banana", quantity: 200}
-        - {name:"orange", quantity: 300}
