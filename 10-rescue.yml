@@ -13,4 +13,8 @@
         - name: Never print this
           ansible.builtin.debug:
             msg: 'I never execute, due to the above task failing, :-('
+      rescue:
+        - name: this one executes if any task failure happens in block
+          ansible.builtin.debug:
+            msg: I caught the error, can do some stuff here to fix it :)
 
