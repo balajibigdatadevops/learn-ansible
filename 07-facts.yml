@@ -1,0 +1,10 @@
+- name: using playbook with ansible facts
+  hosts: localhost
+  tasks:
+    - name: using debug module
+      ansible.builtin.debug:
+        msg: " {{ ansible_major_distribution }}"
+
+- name: Print all available facts
+  ansible.builtin.debug:
+    var: ansible_facts
