@@ -9,7 +9,7 @@
 
   tasks:
     - name: printing names of fruits
-      ansible.builtin.fruit:
+      ansible.builtin.debug:
         msg: Fruit is:{{ item }}
       loop: "{{ fruits }}"
 
